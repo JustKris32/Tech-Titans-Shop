@@ -3,7 +3,7 @@
       loadingContainer.classList.remove('hide');
 
       setTimeout(function() {
-        window.location.href = "needed/Cart.html";
+        window.location.href = "Cart.html";
       }, 2000);
     }
 function scrollToSection(sectionId) {
@@ -19,7 +19,7 @@ function scrollToSection(sectionId) {
       const creatorsLink = document.querySelector('.dropdown-content a[href="#creators"]');
       creatorsLink.addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = "needed/creators.html";
+        window.location.href = "creators.html";
       });
 
       window.addEventListener('click', function(event) {
@@ -27,4 +27,5 @@ function scrollToSection(sectionId) {
           dropdown.classList.remove('show');
         }
       });
+
     });
