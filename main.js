@@ -3,7 +3,7 @@
       loadingContainer.classList.remove('hide');
 
       setTimeout(function() {
-        window.location.href = "Cart.html";
+        window.location.href = "cart.html";
       }, 2000);
     }
 function scrollToSection(sectionId) {
@@ -29,3 +29,4 @@ function scrollToSection(sectionId) {
       });
 
     });
+
