@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Titans</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/1qgk1CD/image.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Oswald, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .blur-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="address"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:not([disabled]):hover {
+            color: white; 
+            background-color: #3b3b3b;
+        }
+
+        input[type="submit"]:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            color: black;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1001;
+            display: none;
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: calc(50% - 85px); 
+            left: calc(50% - 25px); 
+            transform: translate(-50%, -50%);
+        }
+        .loading-message {
+            font-size: 18px;
+            color: white;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .submitbutton:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="blur-background"></div>
+    <h2>Checkout Form</h2>
+    <form id="checkoutForm" onsubmit="return confirmOrder()">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name" required><br>
+        
+        <label for="midname">Middle Name:</label><br>
+        <input type="text" id="midname" name="midname" placeholder="Enter your middle name" required><br>
+        
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Enter your last name" required><br>
+        
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required><br>
+        
+        <label for="address">Delivery Address:</label><br>
+        <input type="text" id="address" name="address" placeholder="Enter your delivery address" required><br>
+        
+        <label for="number">Contact Number:</label><br>
+        <input type="tel" id="number" name="number" placeholder="Enter your contact number" required><br>
+        
+        <label for="payment">Payment Method:</label><br>
+        <select id="payment" name="payment" required>
+            <option value="" disabled selected>Select Payment Method</option>
+            <option value="GCash">GCash</option>
+            <option value="Cash On Delivery">Cash On Delivery</option>
+            <option value="PayMaya">PayMaya</option>
+            <option value="BDO">BDO</option>
+        </select><br><br>
+        
+        <input type="submit" value="Submit" id="submitButton" class="submitbutton" disabled>
+    </form>
+
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-spinner"></div>
+        <div class="loading-message">Warping back to main page... Thank you for buying!</div>
+    </div>
+
+    <script>
+        function confirmOrder(event) {
+            event.preventDefault();
+            
+            if (!validateForm()) {
+                window.alert("Please fill out all required fields.");
+                return false;
+            }
+            
+            document.querySelector('.blur-background').style.display = 'block';
+            document.getElementById('loadingContainer').style.display = 'block';
+
+            var confirmed = window.confirm("Are you sure you want to place this order?");
+            if (confirmed) {
+                window.alert("You have confirmed your order. Thank you for buying from Tech Titans Shop!");
+                
+                setTimeout(function() {
+                    console.log(" Warping back to the main page...");
+                    window.location.href = "index.html";
+                }, 4200); 
+            } else {
+                document.querySelector('.blur-background').style.display = 'none';
+                document.getElementById('loadingContainer').style.display = 'none';
+                return false; 
+            }
+        }
+
+        function validateForm() {
+            var form = document.getElementById("checkoutForm");
+            return form.checkValidity();
+        }
+
+        function updateSubmitButton() {
+            var submitButton = document.getElementById("submitButton");
+            submitButton.disabled = !validateForm();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSubmitButton();
+            document.getElementById('checkoutForm').addEventListener('submit', confirmOrder);
+            document.getElementById('checkoutForm').addEventListener('input', updateSubmitButton);
+        });
+    </script>
+</body>
+</html>
