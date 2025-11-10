@@ -1,0 +1,480 @@
+html {
+      scroll-behavior: smooth;
+    }
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Oswald', sans-serif;
+  background-color: #f8f8f8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f0f0f0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.title p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.sign-in {
+  margin-left: auto;
+}
+
+.sign-in a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 7px auto;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ddd;
+}
+
+.search-box button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-box button:hover,
+.search-box button:focus {
+  background-color: #0056b3;
+}
+
+.products {
+  margin: 20px auto;
+  width: 90%;
+}
+.products h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.products h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.products ul {
+ display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  margin: 0 -10px;
+  padding: 0 10px;
+}
+
+.products li {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.products a,
+.top-picks a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.products img {
+  width: 100%;
+  height: auto;
+}
+
+.products p {
+  margin: 10px 0;
+}
+
+.price {
+  color: red;
+}
+
+.products s {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.top-picks {
+  margin: 50px auto;
+  width: 90%;
+}
+
+.top-picks h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.top-picks h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.top-picks ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.top-picks .product {
+  margin: 10px;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.top-picks .product img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.top-picks p {
+  margin: 10px 0;
+}
+
+.top-picks s {
+  text-decoration: line-through;
+  color: #777;
+}
+.products h2,
+.products h3,
+.top-picks h2,
+.top-picks h3,
+.top-picks p,
+.products p {
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.products h3,
+.top-picks h3,
+.top-picks p,
+.products p {
+  margin: 10px 0;
+}
+
+.top-picks h2,
+.products h2,
+.top-picks h3,
+.products h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.products h2,
+.top-picks h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.products h3:hover,
+.top-picks h2:hover,
+.top-picks p:hover,
+.products p:hover {
+  color: #fff;
+  background-color: #333;
+}
+.products h3,
+.top-picks h3,
+.top-picks p,
+.products p {
+  margin: 10px 0;
+}
+
+.top-picks h2,
+.products h2,
+.top-picks h3,
+.products h3 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.products h2,
+.top-picks h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.products img {
+  transition: transform 0.3s;
+}
+
+.products img:hover {
+  transform: scale(1.1);
+}
+
+.top-picks img {
+    transition: transform 0.3s;
+}
+.top-picks img:hover {
+   transform: scale(1.1);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  max-width: 100px;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 20px; 
+}
+
+.sign-in a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.sign-in a:hover {
+  background-color: #333;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+    .loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; 
+    }
+
+
+    .blur-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        backdrop-filter: blur(5px); 
+    }
+
+    .loading-message {
+        font-size: 24px;
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: 10001; 
+    }
+    .button-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+        .order-button {
+            width: 200px;
+            height: 70px;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            font-size: 20px;
+        }
+
+        .order-button:hover {
+            background-color: #3b3b3b;
+        }
+
+        .order-button:active {
+            transform: scale(0.95);
+        }
+
+    
+    .loading-logo {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        top: calc(50% - 75px); 
+        left: calc(50% - 25px); 
+        z-index: 10000; 
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loading-container.hide {
+        display: none;
+    }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: #333; 
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #333; 
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+
+.dropdown-content p.promo {
+  padding: 12px 16px;
+  margin: 0;
+  color: #555;
+  font-weight: bold;
+}
